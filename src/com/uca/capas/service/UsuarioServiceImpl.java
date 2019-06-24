@@ -16,13 +16,16 @@ public class UsuarioServiceImpl implements UsuarioService{
 	
 	@Override
 	public List<Usuario> findAll() {
+		// TODO Auto-generated method stub
 		return usuarioRepository.findAll();
 	}
 
 	@Override
 	public Usuario findUsuarioyContraseña(String user, String pass) {
+		// TODO Auto-generated method stub
 		
 		return usuarioRepository.findUsuarioyContraseña(user, pass);
 	}
 	
 }
+

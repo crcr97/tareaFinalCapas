@@ -17,42 +17,41 @@ public class EditarDTO {
 	
 	private Integer idSucursal;
 	
-	@NotEmpty(message = "No puede dejar vacio el nombre")
-	@Size(message = "Nombre demasiado largo", min = 0, max = 100)
+	@NotEmpty(message = "favor ingrese el nombre de la sucursal")
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String nombreSucursal;
 	
-	@NotEmpty(message = "No puede dejar vacia la ubicacion")
-	@Size(message = "Ubicacion demasiado larga", min = 0, max = 100)
+	@NotEmpty(message = "favor ingrese la ubicacion de la sucursal")
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String ubicacionSucursal;
 
-	@NotEmpty(message = "Debe ingresar un horario de entrada")
+	@NotEmpty(message = "favor ingresar una hora")
 	private String horarioEntrada;
 	
-	@NotEmpty(message = "Debe ingresar un horario de salida")
+	@NotEmpty(message = "favor ingresar una hora")
 	private String horarioSalida;
 	
-	@NotNull(message="No puede dejar vacio el campo de cantidad")
-	@PositiveOrZero(message = "El numero no es valido")
-	@Digits(message = "No puede ingresar un numero tan grande", integer = 7, fraction = 0)
+	@NotNull(message="favor ingresar un cantidad")
+	@PositiveOrZero(message = "en numero de mesas no es valido")
+	@Digits(message = "Su cantidad de mesas ha sobrepasado 9,999,999 ", integer = 7, fraction = 0)
 	private BigInteger numeroMesas;
 	
-	@NotEmpty(message = "No puede dejar vacio el nombre del gerente")
-	@Size(message = "Nombre demasiado largo", min = 0, max = 100)
+	@NotEmpty(message = "favor ingrese el nombre del gerente")
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String nombreGerente;
 
 	public EditarDTO() {
 		super();
 	}
 
-
-
 	public EditarDTO(Integer idSucursal,
-			@NotEmpty(message = "No puede dejar vacio el nombre") @Size(message = "Nombre demasiado largo", min = 0, max = 100) String nombreSucursal,
-			@NotEmpty(message = "No puede dejar vacia la ubicacion") @Size(message = "Ubicacion demasiado larga", min = 0, max = 100) String ubicacionSucursal,
-			@NotEmpty(message = "Debe ingresar un horario de entrada") String horarioEntrada,
-			@NotEmpty(message = "Debe ingresar un horario de salida") String horarioSalida,
-			@NotNull(message = "No puede dejar vacio el campo de cantidad") @PositiveOrZero(message = "El numero no es valido") @Digits(message = "No puede ingresar un numero tan grande", integer = 7, fraction = 0) BigInteger numeroMesas,
-			@NotEmpty(message = "No puede dejar vacio el nombre del gerente") @Size(message = "Nombre demasiado largo", min = 0, max = 100) String nombreGerente) {
+			@NotEmpty(message = "favor ingrese el nombre de la sucursal") @Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100) String nombreSucursal,
+			@NotEmpty(message = "favor ingrese la ubicacion de la sucursal") @Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100) String ubicacionSucursal,
+			@NotEmpty(message = "favor ingrese el horario de entrada") @Pattern(regexp = "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$", message = "ingrese un formato valido 'HH:MM'") String horarioEntrada,
+			@NotEmpty(message = "favor ingrese el horario de salida") @Pattern(regexp = "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$", message = "ingrese un formato valido 'HH:MM'") String horarioSalida,
+			@NotEmpty(message = "favor ingrese el numero de mesas") @PositiveOrZero(message = "el numero de mesas debe ser un entero positivo") @Digits(message = "ingrese un numero valido", integer = 6, fraction = 0) BigInteger numeroMesas,
+			@NotEmpty(message = "favor ingrese el nombre del gerente") @Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100) String nombreGerente) {
+		super();
 		this.idSucursal = idSucursal;
 		this.nombreSucursal = nombreSucursal;
 		this.ubicacionSucursal = ubicacionSucursal;
@@ -118,7 +117,6 @@ public class EditarDTO {
 		this.nombreGerente = nombreGerente;
 	}
 	
-	//Delegate Functions
 	public Time getHorarioEntradaDelegate() {
 		if(this.horarioEntrada == null) return null;
 		else {

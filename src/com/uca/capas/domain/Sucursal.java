@@ -3,6 +3,7 @@ package com.uca.capas.domain;
 import java.math.BigInteger;
 import java.sql.Time;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -130,6 +131,7 @@ public class Sucursal {
 		this.empleados = empleados;
 	}
 	
+	//Delegate Functions
 	public String getHorarioEntradaDelegate() {
 		if(this.horarioEntrada == null) return "";
 		else {

@@ -8,30 +8,26 @@ import org.hibernate.validator.constraints.NotEmpty;
 @SuppressWarnings("deprecation")
 public class LoginDTO {
 
-	@NotEmpty(message = "Ingrese un correo electronico")
-	@Email(message = "Correo electronico invalido")
-	@Size(message = "No puede ingresar mas de 100 caracteres", min = 0, max = 100)
+	@NotEmpty(message = "por favor ingrese su correo electronico")
+	@Email(message = "su correo electronico debe ser valido")
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	public String username;
 	
-	@NotEmpty(message = "Ingrese una contraseña")
-	@Size(message = "No puede ingresar mas de 100 caracteres", min = 0, max = 100)
+	@NotEmpty(message = "por favor ingrese su contraseña")
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	public String password;
 
 	public LoginDTO() {
 		super();
 	}
 
-
-
 	public LoginDTO(
-			@NotEmpty(message = "Ingrese un correo electronico") @Email(message = "Correo electronico invalido") @Size(message = "No puede ingresar mas de 100 caracteres", min = 0, max = 100) String username,
-			@NotEmpty(message = "Ingrese una contraseña") @Size(message = "No puede ingresar mas de 100 caracteres", min = 0, max = 100) String password) {
+			@NotEmpty(message = "Ingrese su correo electronico") @Size(message = "Maximo 100 caracteres", min = 0, max = 100) @Email(message = "su correo electronico debe ser valido") String username,
+			@NotEmpty(message = "Ingrese su password") @Size(message = "Maximo 100 caracteres", min = 0, max = 100) String password) {
 		super();
 		this.username = username;
 		this.password = password;
 	}
-
-
 
 	public String getUsername() {
 		return username;

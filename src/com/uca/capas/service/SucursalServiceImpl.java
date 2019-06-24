@@ -23,12 +23,14 @@ public class SucursalServiceImpl implements SucursalService{
 
 	@Override
 	public List<Sucursal> findAll() {
+		// TODO Auto-generated method stub
 		return sucursalRepository.findAll();
 	}
 
 	@Override
 	@Transactional
 	public void eliminarSucursal(Integer id) {
+		// TODO Auto-generated method stub
 		Sucursal sucursal =  sucursalRepository.getOne(id);    //sucursalRepository.find(id);
 		entitymanager.remove(sucursal);
 		entitymanager.flush();
@@ -36,11 +38,13 @@ public class SucursalServiceImpl implements SucursalService{
 
 	@Override
 	public Sucursal findOne(Integer id) {
+		// TODO Auto-generated method stub
 		return sucursalRepository.getOne(id);
 	}
 
 	@Override
 	public EditarDTO obtenerSucursalDTO(Integer id) {
+		// TODO Auto-generated method stub
 		EditarDTO editarDTO = new EditarDTO();
 		Sucursal sucursal = sucursalRepository.getOne(id);
 		editarDTO.setIdSucursal(sucursal.getIdSucursal());
@@ -56,6 +60,7 @@ public class SucursalServiceImpl implements SucursalService{
 	@Override
 	@Transactional
 	public void editarSucursal(EditarDTO dto) {
+		// TODO Auto-generated method stub
 		Sucursal succ = sucursalRepository.getOne(dto.getIdSucursal());
 		succ.setNombreSucursal(dto.getNombreSucursal());
 		succ.setUbicacionSucursal(dto.getUbicacionSucursal());
@@ -70,6 +75,7 @@ public class SucursalServiceImpl implements SucursalService{
 	@Override
 	@Transactional
 	public void agregarSucursal(EditarDTO dto) {
+		// TODO Auto-generated method stub
 		Sucursal succ = new Sucursal();
 		succ.setNombreSucursal(dto.getNombreSucursal());
 		succ.setUbicacionSucursal(dto.getUbicacionSucursal());
