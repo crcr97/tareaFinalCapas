@@ -6,16 +6,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="resources/css/login.css">
 <title>Registrar Sucursal</title>
 </head>
 <body>
-<div class="container">
-	<h2 class="text-center">Registrar Sucursal</h2>
+<div class="container ">
+
+	<h2 class="text-center">Crear Nueva Sucursal</h2>
 	<form:form id="regsucursal" action="${pageContext.request.contextPath}/sucursal/registrar" method="POST" modelAttribute="editarDTO">
 		<form:input type="hidden" name="id" value="1" path="idSucursal"/>
 		
@@ -68,7 +68,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-				<input id="enviar" type = "submit" value="Agregar Sucursal" class="btn btn-block btn-login btn-warning">
+				<input id="enviar" type = "submit" value="Crear Sucursal" class="btn btn-primary btn-block">
 				</div>
 			</div>
 		</form:form>

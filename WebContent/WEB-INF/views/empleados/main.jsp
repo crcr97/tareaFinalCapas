@@ -9,7 +9,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="resources/css/tabla.css">
 <title>Main</title>
 </head>
 <body>
@@ -21,10 +20,9 @@
 			}
     </script>
     <div class="container">
-    	<div class="row col-md-6 col-md-offset-2 custyle">
-    		<table id="table" class="table table-striped custab">
+    	<div class="">
+    		<table id="table" class="table table-striped table-hover table-bordered">
     		<thead>
-    			<button onclick="location.href='${pageContext.request.contextPath}/sucursal/main'" class="btn btn-secondary btn-xl pull-left">Ver todas las Sucursales</button>
 				<tr>
 					<th class="text-center">Nombre</th>
 					<th class="text-center">Ubicaci&oacute;n</th>
@@ -43,19 +41,22 @@
 					<td class="text-center">${sucursal.nombreGerente}</td>
 				</tr>
 			</table>
+			<button onclick="location.href='${pageContext.request.contextPath}/sucursal/main'" class="btn btn-secondary btn-xl pull-left btn-block ">Ver todas las Sucursales</button>
+		
 		</div>
 	</div>
 	<br>
 	<div class="container">
-		<div class="row col-md-6 col-md-offset-2 custyle">
-			<table id="table" class="table table-striped custab">
+		<div class="">
+			<table id="table" class="table table-striped table-hover table-bordered">
 				<thead>
-				<button onclick="location.href='${pageContext.request.contextPath}/empleado/nuevo?id=${sucursal.idSucursal}'" class="btn btn-secondary btn-xl pull-left"><b></b> Registrar Empleado</button>
 					<tr>
 						<th class="text-center">Nombre</th>
 						<th class="text-center">Edad</th>
 						<th class="text-center">Genero</th>
 						<th class="text-center">Estado</th>
+					    <th class="text-center" colspan="2">Opciones</th>
+						
 					</tr>
 				</thead>	
 				<c:forEach items="${sucursal.empleados}" var="empleados" varStatus="status">
@@ -81,6 +82,8 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<button onclick="location.href='${pageContext.request.contextPath}/empleado/nuevo?id=${sucursal.idSucursal}'" class="btn-block btn btn-secondary btn-xl pull-left"><b></b> Registrar Empleado</button>
+			
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -6,10 +6,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="resources/css/tabla.css">
 <title>Main</title>
 </head>
 <body>
@@ -21,13 +20,12 @@
 			}
     </script>
     
-    <div class="container">
-    	<div class="row col-md-6 col-md-offset-2 custyle">
-    		<table id="table" class="table table-striped custab">
+    <div class="container"  >
+    	<div class="row ">
+    		<table id="table" class="table table-striped table-hover table-bordered">
     			<thead>
-    				<button onclick="location.href='${pageContext.request.contextPath}/sucursal/nueva'" class="btn ouline-secondary btn-xl pull-right"><b></b> Registrar Sucursal</button>
 					<tr>
-						<th class="text-center">Nombre</th>
+						<th class="text-center" colspan="4">Listado de Sucursales</th>
 					</tr>
 				</thead>
 				<c:forEach items="${sucursales}" var="sucursales" varStatus="status">
@@ -54,6 +52,7 @@
 				</tr>
 				</c:forEach>
 			</table>
+			<button onclick="location.href='${pageContext.request.contextPath}/sucursal/nueva'" class="btn btn-primary btn-block"><b></b>Crear Nueva Sucursal</button>
 		</div>
 	  </div>
 </body>

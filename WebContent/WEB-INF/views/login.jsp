@@ -5,35 +5,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<link rel="stylesheet" href="resources/css/login.css">
-<title>Welcome, Please Login</title>
+<title>Inicio de sesion</title>
 </head>
 <body >
 	
-	<div class="simple-login-container">
-		<h2>Login</h2>
+	<div class="container">
+		<h2 class="text-center">Inicio de Sesion</h2>
 			<form id="prueba1" >
 	
 			
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<input id="1" type="email" placeholder="Username" class="form-control" name="username" />
+					<input id="1" type="email" placeholder="Correo Electronico" class="form-control" name="username" />
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<input id="2" type="password" placeholder="Password" class="form-control" name="password" />
+					<input id="2" type="password" placeholder="Contrasena" class="form-control" name="password" />
 					
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<input type="submit" class="btn btn-block btn-login" value="Iniciar Sesi&oacute;n">
+					<input type="submit" class="btn btn-primary btn-block" value="Iniciar Sesi&oacute;n">
 				</div>
 			</div>
 			</form>
